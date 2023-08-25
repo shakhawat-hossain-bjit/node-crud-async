@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
         }
         if (
           !newProduct.hasOwnProperty("title") ||
-          newProduct?.title?.trim() == ""
+          newProduct?.title?.toString().trim() == ""
         ) {
           error.title =
             "title should be passed to create a product and it must have some values";
