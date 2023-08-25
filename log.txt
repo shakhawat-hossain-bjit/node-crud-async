@@ -61,3 +61,8 @@ Request to view ID 10 at 24/7/2023 at 16:34:32, by Shakhawat Hossain
 Request to view products with price less than or equal 10 at 24/7/2023 at 16:34:42, by Shakhawat Hossain  
 Request to view products with price less than or equal 20 at 24/7/2023 at 16:34:54, by Shakhawat Hossain  
 Request to view ID 10 at 24/7/2023 at 16:37:15, by Shakhawat Hossain  
+All data viewd at 25/7/2023 at 8:55:33, by Shakhawat Hossain  
+Request to update products with ID 11 at 25/7/2023 at 9:9:11, by Shakhawat Hossain  
+Request to delete products with ID 9 at 25/7/2023 at 9:34:14, by Shakhawat Hossain  
+Request to delete products with ID 9 at 25/7/2023 at 9:35:18, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:35:41, by Shakhawat Hossain  

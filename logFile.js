@@ -30,6 +30,10 @@ async function insertInLog(operation, id = null) {
     message = `Request to view ID ${id} at ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}, by ${user}  \n`;
   } else if (operation == "GET_CHEAP") {
     message = `Request to view products with price less than or equal ${id} at ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}, by ${user}  \n`;
+  } else if (operation == "UPDATE") {
+    message = `Request to update products with ID ${id} at ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}, by ${user}  \n`;
+  } else if (operation == "DELETE") {
+    message = `Request to delete products with ID ${id} at ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}, by ${user}  \n`;
   }
 
   const filePath = "log.txt";

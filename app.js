@@ -36,7 +36,7 @@ const server = http.createServer((req, res) => {
     // console.log("req.url ", req.url);
     const params = getQueryParams();
     // console.log(params);
-    // all product insert
+    // all product
     if (req.url === "/products" && req.method === "GET") {
       try {
         let result = await Product.getAllData();
@@ -60,6 +60,7 @@ const server = http.createServer((req, res) => {
       } catch (e) {
         res.writeHead(400, { "Content-Type": "application/json" });
         res.write(JSON.stringify(failure("Internal error occured")));
+        return res.end();
       }
     }
     // single product insert
@@ -150,6 +151,84 @@ const server = http.createServer((req, res) => {
         return res.end();
       }
     }
+
+    //update a product
+    else if (parsedUrl.pathname == "/product/update" && req.method == "PUT") {
+      if (params.id) {
+        // console.log("product id ", params.id);
+        try {
+          let newData = JSON.parse(body);
+          let result = await Product.updateProduct(params.id, newData);
+          let logFileResult = await insertInLog("UPDATE", params.id);
+
+          if (result.success) {
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(success("successfully updated the data")));
+            return res.end();
+          } else {
+            if (result.hasOwnProperty("message")) {
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.write(
+                JSON.stringify(success("There is no such data with this ID"))
+              );
+              return res.end();
+            }
+            res.writeHead(400, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(failure("failed to update the data")));
+            return res.end();
+          }
+        } catch (e) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          res.write(JSON.stringify(failure("Internal error occured")));
+          return res.end();
+        }
+      } else {
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.write(JSON.stringify(failure("Pass an id via your url")));
+        return res.end();
+      }
+    }
+
+    //delete a product
+    else if (
+      parsedUrl.pathname == "/product/delete" &&
+      req.method == "DELETE"
+    ) {
+      if (params.id) {
+        // console.log("product id ", params.id);
+        try {
+          let newData = JSON.parse(body);
+          let result = await Product.deleteProduct(params.id);
+          let logFileResult = await insertInLog("DELETE", params.id);
+
+          if (result.success) {
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(success("successfully deleted the data")));
+            return res.end();
+          } else {
+            if (result.hasOwnProperty("message")) {
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.write(
+                JSON.stringify(success("There is no such data with this ID"))
+              );
+              return res.end();
+            }
+            res.writeHead(400, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(failure("failed to update the data")));
+            return res.end();
+          }
+        } catch (e) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          res.write(JSON.stringify(failure("Internal error occured")));
+          return res.end();
+        }
+      } else {
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.write(JSON.stringify(failure("Pass an id via your url")));
+        return res.end();
+      }
+    }
+
     //  products with price <= x
     else if (parsedUrl.pathname == "/product/get-less" && req.method == "GET") {
       if (params.price) {
@@ -185,6 +264,7 @@ const server = http.createServer((req, res) => {
         return res.end();
       }
     }
+
     // no url matched
     else {
       res.writeHead(400, { "Content-Type": "application/json" });
