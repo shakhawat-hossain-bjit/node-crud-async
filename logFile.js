@@ -48,16 +48,19 @@ async function insertInLog(operation, parameter = null) {
     };
 
     if (
-      operation == "GET_ONE" ||
-      operation == "POST" ||
-      operation == "DELETE" ||
-      operation == "UPDATE"
+      operation == "GET_ONE_PRODUCT" ||
+      operation == "POST_PRODUCT" ||
+      operation == "DELETE_PRODUCT" ||
+      operation == "UPDATE_PRODUCT" ||
+      operation == "GET_ORDERS_FOR_USER" ||
+      operation == "GET_ONE_ORDER"
     ) {
       message.id = parameter;
     }
     if (operation == "FILTER_PRICE") {
       message.price = parameter;
     }
+
     const filePath = "log.json";
     const fileData = await readLogFile(filePath);
     // console.log("File data: ", fileData);
