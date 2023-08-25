@@ -5,6 +5,7 @@ const fs = require("fs");
 const Product = require("./Model/Product");
 const { success, failure } = require("./utils/message");
 const { insertInLog } = require("./logFile");
+const { title } = require("process");
 
 const server = http.createServer((req, res) => {
   const getQueryParams = () => {
@@ -72,14 +73,25 @@ const server = http.createServer((req, res) => {
         if (newProduct.hasOwnProperty("id")) {
           error.id = "Id should not be passed in body";
         }
-        if (!newProduct.hasOwnProperty("title")) {
-          error.title = "Title should  be passed to create a product";
+        if (
+          !newProduct.hasOwnProperty("title") ||
+          newProduct?.title?.trim() == ""
+        ) {
+          error.title =
+            "title should be passed to create a product and it must have some values";
         }
-        if (!newProduct.hasOwnProperty("price")) {
-          error.price = "Price should  be passed to create a product";
+
+        if (!newProduct.hasOwnProperty("price") || isNaN(newProduct.price)) {
+          error.price =
+            "price should  be passed to create a product and it must be number type";
         }
-        if (!newProduct.hasOwnProperty("stock")) {
-          error.stock = "Stock should  be passed to create a product";
+        if (
+          !newProduct.hasOwnProperty("stock") ||
+          isNaN(newProduct.stock) ||
+          !Number.isInteger(Number(newProduct.stock))
+        ) {
+          error.stock =
+            "stock should  be passed to create a product and it must be integer type";
         }
 
         if (Object.keys(error).length > 0) {
@@ -197,7 +209,6 @@ const server = http.createServer((req, res) => {
       if (params.id) {
         // console.log("product id ", params.id);
         try {
-          let newData = JSON.parse(body);
           let result = await Product.deleteProduct(params.id);
           let logFileResult = await insertInLog("DELETE", params.id);
 
@@ -234,7 +245,7 @@ const server = http.createServer((req, res) => {
       if (params.price) {
         // console.log("params.price ", params.price);
         try {
-          let result = await Product.getCheapProduct(params.price);
+          let result = await Product.getProductByCustomPrice(params.price);
           let logFileResult = await insertInLog("GET_CHEAP", params.price);
           if (result.success) {
             res.writeHead(200, { "Content-Type": "application/json" });

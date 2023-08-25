@@ -80,7 +80,7 @@ class Product {
 
   async deleteProduct(id) {
     return fsPromise
-      .readFile(path.join(__dirname, "..", "data", "produc.json"), {
+      .readFile(path.join(__dirname, "..", "data", "product.json"), {
         encoding: "utf-8",
       })
       .then((data) => {
@@ -94,7 +94,7 @@ class Product {
         // console.log(product);
         if (product) {
           let filteredProduct = jsonData.filter((x) => x.id != id);
-          console.log("filteredProduct ", filteredProduct);
+          // console.log("filteredProduct ", filteredProduct);
           return fsPromise
             .writeFile(
               path.join(__dirname, "..", "data", "product.json"),
@@ -119,7 +119,7 @@ class Product {
       });
   }
 
-  async getCheapProduct(price) {
+  async getProductByCustomPrice(price) {
     return fsPromise
       .readFile(path.join(__dirname, "..", "data", "product.json"), {
         encoding: "utf-8",

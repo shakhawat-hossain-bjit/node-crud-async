@@ -66,3 +66,31 @@ Request to update products with ID 11 at 25/7/2023 at 9:9:11, by Shakhawat Hossa
 Request to delete products with ID 9 at 25/7/2023 at 9:34:14, by Shakhawat Hossain  
 Request to delete products with ID 9 at 25/7/2023 at 9:35:18, by Shakhawat Hossain  
 Request to delete products with ID 8 at 25/7/2023 at 9:35:41, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:45:28, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:53, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:55, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:56, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:57, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:58, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:59, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:46:59, by Shakhawat Hossain  
+Request to delete products with ID 8 at 25/7/2023 at 9:48:14, by Shakhawat Hossain  
+Request to view products with price less than or equal 20 at 25/7/2023 at 9:50:20, by Shakhawat Hossain  
+Request to view products with price less than or equal 50 at 25/7/2023 at 9:50:31, by Shakhawat Hossain  
+ID 31 added at 25/7/2023 at 10:38:15, by Shakhawat Hossain  
+ID 32 added at 25/7/2023 at 10:38:16, by Shakhawat Hossain  
+ID 33 added at 25/7/2023 at 10:38:19, by Shakhawat Hossain  
+ID 31 added at 25/7/2023 at 10:39:13, by Shakhawat Hossain  
+ID 31 added at 25/7/2023 at 10:42:11, by Shakhawat Hossain  
+ID 32 added at 25/7/2023 at 10:42:23, by Shakhawat Hossain  
+ID 33 added at 25/7/2023 at 10:49:59, by Shakhawat Hossain  
+ID 34 added at 25/7/2023 at 10:50:9, by Shakhawat Hossain  
+ID 35 added at 25/7/2023 at 10:50:15, by Shakhawat Hossain  
+ID 36 added at 25/7/2023 at 10:50:33, by Shakhawat Hossain  
+ID 37 added at 25/7/2023 at 10:50:39, by Shakhawat Hossain  
+ID 38 added at 25/7/2023 at 10:51:20, by Shakhawat Hossain  
+ID 39 added at 25/7/2023 at 10:51:27, by Shakhawat Hossain  
+ID 40 added at 25/7/2023 at 10:51:39, by Shakhawat Hossain  
+ID 31 added at 25/7/2023 at 10:58:1, by Shakhawat Hossain  
+ID 32 added at 25/7/2023 at 10:58:8, by Shakhawat Hossain  
+ID 33 added at 25/7/2023 at 10:58:35, by Shakhawat Hossain  
