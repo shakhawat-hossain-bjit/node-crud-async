@@ -8,7 +8,9 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "data/*"
+      "data/*",
+      "log.txt",
+      "log.json"
     ]
   },
   "author": "",

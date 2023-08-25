@@ -130,7 +130,7 @@ const server = http.createServer((req, res) => {
         // console.log("single product", params.id);
         try {
           let result = await Product.getSingleData(params.id);
-          let logFileResult = await insertInLog("GET_SINGLE", params.id);
+          let logFileResult = await insertInLog("GET_ONE", params.id);
           if (result.success) {
             if (result.data) {
               res.writeHead(200, { "Content-Type": "application/json" });
@@ -246,7 +246,7 @@ const server = http.createServer((req, res) => {
         // console.log("params.price ", params.price);
         try {
           let result = await Product.getProductByCustomPrice(params.price);
-          let logFileResult = await insertInLog("GET_CHEAP", params.price);
+          let logFileResult = await insertInLog("FILTER_PRICE", params.price);
           if (result.success) {
             res.writeHead(200, { "Content-Type": "application/json" });
             if (result.data) {
